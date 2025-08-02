@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 📚 Library Management System (Java)
 A comprehensive Library Management System built in Java designed to simulate the operations of a typical library. This project demonstrates core Object-Oriented Programming principles such as encapsulation, abstraction, inheritance, and polymorphism, providing a practical example for learners and developers.
 
@@ -61,6 +62,54 @@ com.library.MAIN or
 com.library.com.library.lib.InnerMAIN (depending on your setup)
 
 🔮 Future Enhancements
+=======
+# Library_project
+<<<<<<< HEAD
+A simple Library Management System implemented in Java, demonstrating key concepts of Object-Oriented Programming like encapsulation, abstraction, and modular design. This project is suitable for beginners who want to understand how to structure Java projects and manage library operations using classes and objects.
+=======
+<<<<<<< HEAD
+A simple Library Management System implemented in Java, demonstrating key concepts of Object-Oriented Programming like encapsulation, abstraction, and modular design. This project is suitable for beginners who want to understand how to structure Java projects and manage library operations using classes and object
+=======
+<<<<<<< HEAD
+A simple Library Management System implemented in Java, demonstrating key concepts of Object-Oriented Programming like encapsulation, abstraction, and modular design. This project is suitable for beginners who want to understand how to structure Java projects and manage library operations using classes and object
+
+🛠 Features
+Add, remove, and manage books
+
+Track available book quantities
+
+Organize books by author or title
+
+Manage librarian and user interactions
+
+Clean and modular code structure using packages
+
+📦 Technologies Used
+Java (Core)
+
+OOP principles (Encapsulation, Abstraction, Classes)
+
+Collections (HashMap, ArrayList)
+
+🧠 Learning Outcomes
+Understand Java packages and class organization
+
+Work with file structures and modular code
+
+Practice real-world problem solving with Java
+
+📁 Project Structure
+ruby
+Copy code
+com/
+├── example/
+│   └── encap/         // Encapsulation-related classes
+├── library/           // Core logic
+│   └── lib/           // Main class
+│   └── librar/        // Book handling
+│   └── librariann/    // Librarian logic
+
+>>>>>>> d4ac3aa (Initial commit)
 User Interface: Add a GUI using Java Swing or JavaFX to make the system user-friendly.
 
 Database Integration: Use MySQL or SQLite for persistent storage of books and users.
@@ -71,4 +120,11 @@ Book Issue & Return: Implement borrowing, returning, and overdue fine calculatio
 
 Search Functionality: Add book search by title, author, or category.
 
+<<<<<<< HEAD
 REST API: Develop a backend REST API for the system to be accessed by other apps.
+=======
+=======
+>>>>>>> ef00209 (Initial commit)
+>>>>>>> 092c1e5 (Initial commit)
+>>>>>>> dda1113 (Initial commit)
+>>>>>>> d4ac3aa (Initial commit)
