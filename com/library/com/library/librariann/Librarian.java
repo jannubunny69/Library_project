@@ -3,12 +3,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Iterator;
-public class Librarian {  
-    public  String name;
+public class Librarian {
+    private String name;
+
     public Librarian(String name) {
-    this.name=name;
-}
+        this.name = name;
+    }
+
     public Librarian() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
    
     HashMap<String,String>members=new HashMap<>();
@@ -23,8 +33,6 @@ public class Librarian {
         String digits = "0123456789";
         String letters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         String special="@#$";
-        
-        // Generating an 8-digit number
         for (int i = 0; i < (length/2)-1; i++) {
             int index = random.nextInt(digits.length());
             sb.append(digits.charAt(index));
@@ -38,16 +46,11 @@ public class Librarian {
             sb.append(special.charAt(index));
         }
         
-        // Converting to an integer
         return sb.toString();
     }
     
   
      public void removemember(String remvname) {
-        
-        // boolean removed = members.entrySet().removeIf(entry -> entry.getValue().equalsIgnoreCase(members.get(remvname)));
-        // boolean removed = members.entrySet().removeIf(entry -> entry.getValue().equalsIgnoreCase(remvname));
-
         if (members.containsKey(remvname)) {
             members.remove(remvname);
             System.out.println("Member " + remvname + " removed successfully.");
@@ -58,7 +61,6 @@ public class Librarian {
     
     
     public void displaymembers() {
-    
         for(String key:members.keySet()){
             System.out.println("Name :"+key+" Id :"+members.get(key));
         }
@@ -67,8 +69,6 @@ public class Librarian {
         for(Librarian list1:librarianlist1){
             System.out.println("Name : "+list1.name);
             }
-              
-
     }
     public ArrayList<Librarian> removelibraians(ArrayList<Librarian> librarianlist1, String librarian2) {
         Boolean found=false;

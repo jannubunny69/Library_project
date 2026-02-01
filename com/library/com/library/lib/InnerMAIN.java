@@ -56,7 +56,6 @@ class MAIN{
                 obj.findbook(b);
                 break;
                 case 6:
-                // librarian login
                 System.out.println("please enter your name");
                 String admin=scan.nextLine();
                 obj.verifylibrarian(admin);

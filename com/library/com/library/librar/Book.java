@@ -2,20 +2,21 @@ package com.library.librar;
 import com.library.librariann.Librarian;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Book extends Mainbook{
-     ArrayList<Mainbook>booklist=new ArrayList<>();
-     Librarian obj1=new Librarian("rama chary");
-    Scanner scanner=new Scanner(System.in);
-    ArrayList<Librarian>librarianlist1=new ArrayList<>();
+    ArrayList<Mainbook> booklist = new ArrayList<>();
+    Librarian obj1 = new Librarian();
+    Scanner scanner = new Scanner(System.in);
+    ArrayList<Librarian> librarianlist1 = new ArrayList<>();
     public void initialize_librarian(){
         librarianlist1.add(new Librarian("rama chary"));
-        System.out.println(obj1.name);
+        System.out.println(obj1.getName());
     }
     public void initializebooks(){
-        booklist.add( new Mainbook("wings of fire","apj abdul kalam",220,40));
-       booklist.add(  new Mainbook("The Alchemist", "Paulo Coelho", 299,25));
-         booklist.add(new Mainbook("1984", "George Orwell", 199,15));
-        booklist.add(new Mainbook("To Kill a Mockingbird", "Harper Lee", 349,3));
+                booklist.add( new Mainbook("wings of fire","apj abdul kalam",220,40));
+                booklist.add(  new Mainbook("The Alchemist", "Paulo Coelho", 299,25));
+                booklist.add(new Mainbook("1984", "George Orwell", 199,15));
+                booklist.add(new Mainbook("To Kill a Mockingbird", "Harper Lee", 349,3));
      }
     public Book(String bname,String aname,int price,int count){
        super(bname,aname,price,count);
@@ -35,6 +36,7 @@ public class Book extends Mainbook{
     public void add(Mainbook mainbook) {
         booklist.add(mainbook);
     }
+
     public void add(Librarian librarian) {
         librarianlist1.add(librarian);
     }
@@ -58,14 +60,11 @@ public class Book extends Mainbook{
         booklist.add(new Mainbook(bname,count));
         System.out.println("Added book: " + bname);
     }
-
-
-    
     public void findbook(String bookname){
         Boolean found=false;
         for(Mainbook book:booklist){
-            if (book.bookname.equalsIgnoreCase(bookname)) {
-                System.out.println("Book name: " + book.bookname + " \n author :   " + book.authername + ",\n Price:     " + book.price +",\n count :  "+ book.count);
+            if (book.getBookname().equalsIgnoreCase(bookname)) {
+                System.out.println(book.getDetails());
                 found = true;
                 break;
             }
@@ -76,21 +75,19 @@ public class Book extends Mainbook{
     }
     public void display(){
         for(Mainbook book:booklist){
-            // System.out.println(book.bookname+  book.authername +book.price+ book.count);
-            System.out.println("Book name: " + book.bookname + " \n author :   " + book.authername + ",\n Price:     " + book.price +",\n count :  "+ book.count);
+            System.out.println(book.getDetails());
 
         }
     }   
     public  void returnbook(String s){
         int flag=0;
         for(Mainbook book:booklist){
-            if(book.bookname.equalsIgnoreCase(s)){
-                book.isborrow=false;
+            if(book.getBookname().equalsIgnoreCase(s)){
+                book.returnItem();
                 flag=1;
-                book.count++;
-                
             }
-        }if(flag==1){
+        }
+        if(flag==1){
             System.out.println("book returned succesfully");
         }
         else{
@@ -99,22 +96,20 @@ public class Book extends Mainbook{
     }
     public void borrow(String a) {
         for(Mainbook book:booklist){
-                if(book.bookname.equals(a)){
-                    if(book.count>0){
-                            book.isborrow=true;
-                            book.count--;
-                            System.out.println("book is borrowed succesfully");                        
-                    }
-                    else{
-                        System.out.println("book is unavilable");
-                    }
+            if(book.getBookname().equals(a)){
+                boolean ok = book.borrowItem();
+                if(ok){
+                    System.out.println("book is borrowed succesfully");
+                } else {
+                    System.out.println("book is unavilable");
                 }
+            }
         }
     }
     public void verifylibrarian12(String name1) {
         int flag=0;
         for(Librarian librarian:librarianlist1){
-            if (librarian.name.equals(name1)) {
+            if (librarian.getName().equals(name1)) {
                 flag=1;
             }
         }
@@ -138,7 +133,7 @@ public class Book extends Mainbook{
     public void verifylibrarian(String admin) {
         
         for(Librarian librarian:librarianlist1){
-            if (librarian.name.equals(admin)) {
+            if (librarian.getName().equals(admin)) {
                 
                 System.out.println("login Successful");
                 System.out.println("welcome : "+ admin);
